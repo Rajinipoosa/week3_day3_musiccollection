@@ -20,6 +20,7 @@ class Album
     result = SqlRunner.run(sql)
      @id = result[0]["id"].to_i
   end
+
   def update()
     
    sql = "UPDATE albums SET(
@@ -28,10 +29,10 @@ class Album
    artist_id) = (
    '#{@title}',
    '#{@genre}',
-    #{@artist_id}) WHERE id = #{@id};"
+    #{@artist_id}) WHERE id = #{@id}"
     
-     binding.pry
-      results = SqlRunner.run(sql)
+    
+      result = SqlRunner.run(sql)
 
 
   end
@@ -51,13 +52,7 @@ class Album
     
 
   end
- def update()
-
-
-
- end
-
-
+ 
   def artist()
 
     sql = "SELECT * FROM artists where id = #{@artist_id}"
